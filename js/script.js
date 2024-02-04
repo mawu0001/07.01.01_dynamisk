@@ -30,6 +30,7 @@ function showProducts(productsJSON) {
     console.log("Product", product);
     clone = productTemplate.cloneNode(true).content;
 
+    clone.querySelector(".product_name").src = product.brandimage;
     clone.querySelector(".product_name").textContent =
       product.productdisplayname;
     if (product.soldout) {
