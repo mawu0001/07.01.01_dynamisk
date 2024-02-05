@@ -18,7 +18,7 @@ function showProduct(product) {
   //ændre indhold
 
   //appende
-  document.querySelector(".main").appendChild(copy);
+  document.querySelector("main").appendChild(copy);
 }
 
 /*

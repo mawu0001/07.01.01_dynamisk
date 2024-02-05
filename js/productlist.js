@@ -40,6 +40,9 @@ function showProducts(productsJSON) {
       //produktet er udsolgt
       clone.querySelector("article").classList.add("soldout");
     }
+    clone
+      .querySelector(".read_more")
+      .setAttribute("href", `produkt.html?id=${product.id}`);
 
     //append child
     productContainer.appendChild(clone);
