@@ -27,15 +27,21 @@ function showProducts(productsJSON) {
   let productsClone;
 
   productsJSON.forEach((product) => {
-    console.log("Product", product);
+    // console.log("Product", product);
+
+    //fang template
     clone = productTemplate.cloneNode(true).content;
 
+    //skift indhold
     clone.querySelector(".product_name").src = product.brandimage;
     clone.querySelector(".product_name").textContent =
       product.productdisplayname;
     if (product.soldout) {
+      //produktet er udsolgt
       clone.querySelector("article").classList.add("soldout");
     }
+
+    //append child
     productContainer.appendChild(clone);
   });
 }
