@@ -27,7 +27,7 @@ function showProducts(productsJSON) {
   let productsClone;
 
   productsJSON.forEach((product) => {
-    console.log("Product", product);
+    // console.log("Product", product);
     clone = productTemplate.cloneNode(true).content;
 
     clone.querySelector(".product_name").src = product.brandimage;
