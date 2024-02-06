@@ -37,15 +37,23 @@ function showProducts(productsJSON) {
     clone.querySelector(".product_name").textContent =
       product.productdisplayname;
     clone.querySelector(".brandname").textContent = product.brandname;
+
     clone.querySelector(".subcategory").textContent = product.articletype;
     clone.querySelector(
       "img"
     ).src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
 
-    //if (product.soldout) {
-    //produktet er udsolgt
-    //clone.querySelector("article").classList.add("soldout");
-    //  }
+    if (product.soldout) {
+      // produktet er udsolgt
+      clone.querySelector(".soldout").classList.remove("hide");
+      clone.querySelector(".product_image").classList.add("milk");
+    }
+    console.log(product.discount);
+    if (product.discount) {
+      clone.querySelector(".procent_span").textContent = product.discount;
+    } //else {
+    // clone.querySelector("procent_txt").classList.add("hide");
+    //}
 
     clone
       .querySelector(".read_more")

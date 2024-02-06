@@ -41,28 +41,31 @@
 
 <template class="product_template">
   <article class="smallProduct">
-    <!-- <div class="product_image_container"> -->
-    <p class="soldout">Sold Out</p>
-    <img
-      class="product_image opacity"
-      src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
-      alt="Sahara Team India Fanwear Round Neck Jersey"
-    />
-
-    <!-- </div> -->
+    <div class="product_image_container">
+      <p class="soldout hide">Sold Out</p>
+      <img
+        class="product_image"
+        src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+        alt="Sahara Team India Fanwear Round Neck Jersey"
+      />
+    </div>
     <h3 class="product_name">Sahara Team India Fanwear Round Neck Jersey</h3>
     <!-- <p class="subtle">Tshirts | Nike</p> -->
     <p>
       <span class="brandname">Nike</span> |
       <span class="subcategory">Tshirts</span>
     </p>
-    <p class="price"><span>Prev.</span> DKK 1595,-</p>
+    <div class="discounted">
+      <p class="price"><span>Prev.</span> DKK 1595,-</p>
+    </div>
+    <!-- 
     <div class="discounted">
       <p>Now DKK 1560,-</p>
       <p>-34%</p>
-    </div>
+    </div> -->
 
     <a class="read_more" href="produkt.html">Read more</a>
+    <p class="procent_txt">- <span class="procent_span"></span>%</p>
   </article>
 </template>
 
