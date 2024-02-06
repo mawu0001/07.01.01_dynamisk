@@ -140,6 +140,13 @@ h1 {
   gap: 1rem;
 }
 
+a {
+  text-decoration: none;
+  font-family: var(--second_font);
+  color: var(--font_col);
+  font-weight: 600;
+}
+
 .smallProduct {
   background-color: var(--second_col);
   padding: 2rem;
@@ -163,7 +170,20 @@ h1 {
   height: 250px;
 }
 
-.productlist article .discounted,
+.opacity {
+  opacity: 40%;
+  position: relative;
+}
+
+.soldout {
+  /* position: absolute;
+  top: 0; */
+  padding: 0.2rem;
+  background-color: #959595;
+  z-index: 1;
+}
+
+/* .productlist article .discounted,
 .productlist article .price span {
   display: none;
 }
@@ -192,7 +212,7 @@ h1 {
   background: var(--font_col);
   color: var(--second_col);
   padding: 1rem;
-}
+} */
 
 .product main {
   display: grid;
