@@ -49,6 +49,7 @@ function showProducts(productsJSON) {
       //produktet er på tilbud
       clone.querySelector("article").classList.add("discounted");
     }
+
     clone
       .querySelector(".read_more")
       .setAttribute("href", `produkt.html?id=${product.id}`);
