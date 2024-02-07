@@ -1,4 +1,6 @@
 window.addEventListener("DOMContentLoaded", init);
+const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get("category");
 
 const productURL = "https://kea-alt-del.dk/t7/api/products";
 
@@ -25,6 +27,7 @@ function showProducts(productsJSON) {
     clone = productTemplate.cloneNode(true).content;
 
     //skift indhold
+    document.querySelector("h2").textContent = product.category;
     clone.querySelector(".product_name").src = product.brandimage;
     clone.querySelector(".product_name").textContent =
       product.productdisplayname;
