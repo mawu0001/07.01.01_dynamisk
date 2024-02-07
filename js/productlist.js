@@ -6,13 +6,8 @@ let productTemplate;
 let productContainer;
 
 function init() {
-  console.log("init");
-
   productTemplate = document.querySelector(".product_template");
-  console.log("productTemplate", productTemplate);
-
   productContainer = document.querySelector(".product_container");
-  console.log("productContainer", productContainer);
 
   fetch(productURL)
     .then(function (response) {
@@ -25,10 +20,7 @@ function init() {
 
 function showProducts(productsJSON) {
   let productsClone;
-
   productsJSON.forEach((product) => {
-    // console.log("Product", product);
-
     //fang template
     clone = productTemplate.cloneNode(true).content;
 
@@ -37,6 +29,7 @@ function showProducts(productsJSON) {
     clone.querySelector(".product_name").textContent =
       product.productdisplayname;
     clone.querySelector(".brandname").textContent = product.brandname;
+    clone.querySelector(".price").textContent = `DKK ` + product.price + `,-`;
 
     clone.querySelector(".subcategory").textContent = product.articletype;
     clone.querySelector(
@@ -48,12 +41,11 @@ function showProducts(productsJSON) {
       clone.querySelector(".soldout").classList.remove("hide");
       clone.querySelector(".product_image").classList.add("milk");
     }
-    console.log(product.discount);
+    console.log(product);
     if (product.discount) {
       clone.querySelector(".procent_span").textContent = product.discount;
-    } //else {
-    // clone.querySelector("procent_txt").classList.add("hide");
-    //}
+      clone.querySelector(".procent_txt").classList.remove("hide");
+    }
 
     clone
       .querySelector(".read_more")
@@ -63,13 +55,3 @@ function showProducts(productsJSON) {
     productContainer.appendChild(clone);
   });
 }
-
-/**
- document.querySelector(".purchasebox .brandname").textContent =
-    product.brandname;
-  document.querySelector(".purchasebox .subcategory").textContent =
-    product.subcategory;
-    document.querySelector(
-    "img"
-  ).src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
- */
