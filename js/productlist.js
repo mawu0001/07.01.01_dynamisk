@@ -44,10 +44,11 @@ function showProducts(productsJSON) {
       clone.querySelector(".soldout").classList.remove("hide");
       clone.querySelector(".product_image").classList.add("milk");
     }
-    console.log(product);
+
     if (product.discount) {
       clone.querySelector(".procent_span").textContent = product.discount;
       clone.querySelector(".procent_txt").classList.remove("hide");
+      clone.querySelector(".discounted").classList.remove("hide");
     }
 
     clone
