@@ -15,7 +15,7 @@ html {
   --second_font: "Poppins", sans-serif;
   --font_col: #212427;
   --background_col: #f9f6ee;
-  --fun_col: #d95829;
+  --fun_col: #395f20;
   --second_col: #f1ede0;
   background-color: var(--background_col);
   color: var(--font_col);
@@ -151,6 +151,9 @@ h1 {
   padding: 0.2rem;
   background-color: #959595;
   opacity: 90%;
+  border-radius: 1rem;
+  right: 0;
+  margin: 0.2rem;
 }
 
 article {
@@ -158,9 +161,76 @@ article {
 }
 
 .procent_txt {
-  background-color: red;
-  padding: 0.5rem;
+  background-color: var(--fun_col);
+  padding: 0.7rem;
   position: absolute;
   right: 10%;
   bottom: 5%;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.product main {
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  margin-top: 2rem;
+}
+
+.product main img {
+  grid-column: 1/-1;
+  justify-self: center;
+  border-radius: 1rem;
+}
+
+.purchasebox {
+  background: #d8d8d8;
+  color: var(--font_col);
+  padding: 1rem;
+  order: 2;
+  transform: translate(-105px, -100px);
+  border-radius: 1rem;
+}
+
+.purchasebox button {
+  display: block;
+  margin-top: 5rem;
+  width: 100%;
+  padding: 1.5rem;
+}
+button {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: var(--background_col);
+  border: 2px solid var(--background_col);
+  color: var(--font_col);
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  appearance: none;
+  display: inline-block;
+  line-height: initial;
+}
+
+.info {
+  order: 0;
+  background: #959595;
+  padding: 2rem;
+  padding-bottom: 3rem;
+  width: 82%;
+  border-radius: 1rem;
+  transform: translate(189.2px, -22px);
+}
+
+.info h2 {
+  padding: 0;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-left: 1rem;
 }
