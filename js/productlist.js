@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", init);
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get("category");
 
-const productURL = "https://kea-alt-del.dk/t7/api/products";
+//const productURL = "https://kea-alt-del.dk/t7/api/products?category";
 
 let productTemplate;
 let productContainer;
@@ -11,7 +11,7 @@ function init() {
   productTemplate = document.querySelector(".product_template");
   productContainer = document.querySelector(".product_container");
 
-  fetch(productURL)
+  fetch("https://kea-alt-del.dk/t7/api/products?" + query)
     .then(function (response) {
       return response.json();
     })
