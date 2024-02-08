@@ -11,7 +11,7 @@ function init() {
   productTemplate = document.querySelector(".product_template");
   productContainer = document.querySelector(".product_container");
 
-  fetch("https://kea-alt-del.dk/t7/api/products?" + query)
+  fetch("https://kea-alt-del.dk/t7/api/products?category=" + query)
     .then(function (response) {
       return response.json();
     })
@@ -32,7 +32,7 @@ function showProducts(productsJSON) {
     clone.querySelector(".product_name").textContent =
       product.productdisplayname;
     clone.querySelector(".brandname").textContent = product.brandname;
-    clone.querySelector(".price").textContent = `DKK ` + product.price + `,-`;
+    clone.querySelector(".pris").textContent = product.price;
 
     clone.querySelector(".subcategory").textContent = product.articletype;
     clone.querySelector(
@@ -49,6 +49,10 @@ function showProducts(productsJSON) {
       clone.querySelector(".procent_span").textContent = product.discount;
       clone.querySelector(".procent_txt").classList.remove("hide");
       clone.querySelector(".discounted").classList.remove("hide");
+      clone.querySelector(".price").classList.add("strike");
+      clone.querySelector(".prev").classList.remove("hide");
+      const nypris = product.price - (product.discount * product.price) / 100;
+      clone.querySelector(".new_price").textContent = Math.round(nypris);
     }
 
     clone

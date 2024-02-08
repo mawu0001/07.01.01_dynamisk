@@ -55,7 +55,9 @@ h1 {
   font-size: 5rem;
   color: var(--font_col);
 }
-
+.strike {
+  text-decoration: line-through;
+}
 .mainMenu h1 span {
   display: inline-block;
   transform: scaleX(-1) translateX(-0.2rem);
